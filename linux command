@@ -1,0 +1,245 @@
+Q.1
+1.	Redirect the output of ls command to a file named outfile. Use this as an input file for remaining commands.
+	Transfer all ls data into the file named outfile
+root@DESKTOP-EIQ2TNC:~# ls > outfile
+root@DESKTOP-EIQ2TNC:~# cat outfile
+
+2.	To select the lines in a file which has digit as one of the character in that
+line and redirect the output to the file named list.
+	Select such line that contains “one” and copy that lines into the file named list.
+root@DESKTOP-EIQ2TNC:~# cat > sample_page.txt
+I am Programmer
+studing at vishwakarma institute of technology one
+what is your name
+and you know one p
+cat boll
+once the rocky
+that time
+^C
+root@DESKTOP-EIQ2TNC:~# grep -h "one" sample_page.txt > list.txt
+root@DESKTOP-EIQ2TNC:~# cat list.txt
+studing at vishwakarma institute of technology one
+and you know one p
+
+3.	Assign execute permission to owner and remove read permission from
+other for an ordinary file named test by relative way.
+	chmod 740 test.sh
+root@DESKTOP-EIQ2TNC:~# ls -l test.sh
+-rw-r--rw- 1 root root 32 Dec 11 17:32 test.sh
+root@DESKTOP-EIQ2TNC:~# chmod u+x test.sh
+root@DESKTOP-EIQ2TNC:~# ls -l test.sh
+-rwxr--rw- 1 root root 32 Dec 11 17:32 test.sh
+root@DESKTOP-EIQ2TNC:~# chmod o-r test.sh
+root@DESKTOP-EIQ2TNC:~# ls -l test.sh
+-rwxr---w- 1 root root 32 Dec 11 17:32 test.sh
+
+4.	Create an alias named rm that always deletes file interactively.
+	Create cheet command for delete
+root@DESKTOP-EIQ2TNC:~# alias rm=rm
+root@DESKTOP-EIQ2TNC:~# ls list
+list
+root@DESKTOP-EIQ2TNC:~# rm list
+root@DESKTOP-EIQ2TNC:~# ls list
+ls: cannot access 'list': No such file or directory
+root@DESKTOP-EIQ2TNC:~#
+
+5.	Count the currently login users to the system.
+	Loged in users
+root@DESKTOP-EIQ2TNC:~# w
+ 17:47:59 up  2:30,  0 users,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+
+
+Q.2
+1.	Redirect the output of cat command to a file named outfile. Use this as an input file for remaining commands.
+	Copy all data of cat into the file named outfile
+root@DESKTOP-EIQ2TNC:~# cat >> sample1.txt > outfile.txt
+1.      Redirect the output of cat command to a file named outfile. Use this as an input file for remaining commands.
+clear
+^C
+root@DESKTOP-EIQ2TNC:~# cat outfile.txt
+1.      Redirect the output of cat command to a file named outfile. Use this as an input file for remaining commands.
+clear
+
+2.	List all hidden files under current directory and store in “hidden” file
+	Only hidden files
+root@DESKTOP-EIQ2TNC:~# ls -A | grep "^\." > hidden.txt
+root@DESKTOP-EIQ2TNC:~# cat hidden.txt
+.bash_history
+.bashrc
+.digi_watch.sh.swo
+.local
+.motd_shown
+.profile
+.sort_array.sh.swp
+.viminfo
+
+3.	Assign write permission to owner and remove execute permission from
+other for an ordinary file named test by absolute way.
+	chmod 666 test.sh
+root@DESKTOP-EIQ2TNC:~# ls -l test.sh
+-r--rw-rwx 1 root root 32 Dec 11 17:32 test.sh
+root@DESKTOP-EIQ2TNC:~# chmod 666 test.sh
+root@DESKTOP-EIQ2TNC:~# ls -l test.sh
+-rw-rw-rw- 1 root root 32 Dec 11 17:32 test.sh
+
+4.	To create soft and hard link for given file
+	Soft link
+root@DESKTOP-EIQ2TNC:~# ln -s test.sh link.sh
+root@DESKTOP-EIQ2TNC:~# ls -l link.sh
+lrwxrwxrwx 1 root root 7 Dec 11 18:13 link.sh -> test.sh
+
+hard link
+root@DESKTOP-EIQ2TNC:~# ln list.txt link.txt
+root@DESKTOP-EIQ2TNC:~# ls -l link.txt
+-rw-r--r-- 2 root root 70 Dec 11 17:16 link.txt
+
+5.	To convert lowercase to upper case of a given file.
+	Lowercase to upper case
+root@DESKTOP-EIQ2TNC:~# cat >> items.txt
+1. Cat
+2. Dog
+3. Hourse
+4. Cammel
+^C
+root@DESKTOP-EIQ2TNC:~# tr a-z A-Z < items.txt
+1. CAT
+2. DOG
+3. HOURSE
+4. CAMMEL
+
+6.	To extract 1st and 10th character of a given file.
+	1st
+root@DESKTOP-EIQ2TNC:~# cat list.txt
+The sed command stands for Stream EDitor. It’s a tool that we can use to modify a text stream
+The sed coroot@DESKTOP-EIQ2TNC:~# head -c 1 list.txt
+T
+
+10th
+
+
+
+7.	To display how many times lines are repeated in a given file.
+	sort sample1.txt | uniq -c
+root@DESKTOP-EIQ2TNC:~# cat >> sample1.txt
+I will choose MAC OS.
+I will choose Linux.
+I will choose MAC OS.
+I will choose Linux.
+I will choose MAC OS.
+I will choose Linux.
+I will choose Linux.
+I will choose Microsoft Windows.
+I will choose Linux.
+I will choose Linux.
+^C
+root@DESKTOP-EIQ2TNC:~# sort sample1.txt | uniq -c
+      6 I will choose Linux.
+      3 I will choose MAC OS.
+      1 I will choose Microsoft Windows.
+
+Q.3
+1.	To redirect the output of cp command to a file named outfile. Use this as an input file for remaining commands.
+	root@DESKTOP-EIQ2TNC:~# cp a.txt b.txt
+root@DESKTOP-EIQ2TNC:~# cat b.txt > outfile1.txt
+root@DESKTOP-EIQ2TNC:~# cat b.txt
+He is good guy
+root@DESKTOP-EIQ2TNC:~# cat outfile1.txt
+He is good guy
+
+
+2.	To select the lines in a file which has 4 letter words in that line and
+redirect the output to the file named list.
+	D
+
+
+3.	Assign write permission to owner and remove read permission from group user for an ordinary file named test by relative way.
+	chmod  626 test.sh
+root@DESKTOP-EIQ2TNC:~# ls -l test.sh
+-r-xrwxrwx 1 root root 32 Dec 11 17:32 test.sh
+root@DESKTOP-EIQ2TNC:~# chmod u+w test.sh
+root@DESKTOP-EIQ2TNC:~# ls -l test.sh
+-rwxrwxrwx 1 root root 32 Dec 11 17:32 test.sh
+root@DESKTOP-EIQ2TNC:~# chmod g-r test.sh
+root@DESKTOP-EIQ2TNC:~# ls -l test.sh
+-rwx-wxrwx 1 root root 32 Dec 11 17:32 test.sh
+
+4.	Create an alias named ls that always lists all the files including hidden
+files.
+	ls -a
+root@DESKTOP-EIQ2TNC:~# ls -a
+.                         		items.txt
+..                        		library_management_system.sh
+.bash_history             	link.sh
+.bashrc                   		link.txt
+.digi_watch.sh.swo        	list.txt
+.local                    		outfile.txt
+.motd_shown               	outfile1.txt
+.profile                  		palindrome_num.sh
+.sort_array.sh.swp        	prime_or_not.sh
+.viminfo                  		reader_writer.c
+a.txt                     		rest_management_system.sh
+b.txt                     		restaurant_management_system.sh
+bookRecords.ldb           	restaurant_management_system.sh.save
+calculator.sh             		reverse_num.sh
+calculator_cp.sh          	sample1.txt
+digi_watch.sh             	sample_page.txt
+digi_watch.sh.save        	sort_array.sh
+factorial_rec.sh          	std_management_system.sh
+factorial_without_rec.sh  	std_management_system.sh.save
+geekfile.txt              		substring.sh
+hidden.txt                		test.sh
+hidden1
+
+
+5.	Count the number of words in the list file.
+	wc -w filename
+root@DESKTOP-EIQ2TNC:~# cat list.txt
+The sed command stands for Stream EDitor. It’s a tool that we can use to modify a text stream
+root@DESKTOP-EIQ2TNC:~# wc -w list.txt
+19 list.txt
+
+
+Q.4
+1.	Redirect the output of mv command to a file named outfile. Use this as
+an input file for remaining commands.
+	root@DESKTOP-EIQ2TNC:~# mv b.txt outfile2.txt
+root@DESKTOP-EIQ2TNC:~# cat outfile2.txt
+He is good guy
+root@DESKTOP-EIQ2TNC:~# ls b.txt
+ls: cannot access 'b.txt': No such file or directory
+
+
+2.	List all hidden files under current directory and store in “hidden” file
+	ls -a
+root@DESKTOP-EIQ2TNC:~# ls -a > hidden2.txt
+root@DESKTOP-EIQ2TNC:~# cat hidden2.txt
+.
+..
+.bash_history
+.bashrc
+.digi_watch.sh.swo
+.local
+.motd_shown
+.profile
+.sort_array.sh.swp
+.viminfo
+bookRecords.ldb
+calculator.sh
+calculator_cp.sh
+digi_watch.sh
+digi_watch.sh.save
+factorial_rec.sh
+factorial_without_rec.sh
+3.	Assign write permission to group user and remove execute permission
+from owner for an ordinary file named test by absolute way.
+	ls -l test.sh
+root@DESKTOP-EIQ2TNC:~# ls -l test.sh
+-rwxr----- 1 root root 32 Dec 11 17:32 test.sh
+root@DESKTOP-EIQ2TNC:~# chmod 620 test.sh
+root@DESKTOP-EIQ2TNC:~# ls -l test.sh
+-rw--w---- 1 root root 32 Dec 11 17:32 test.sh
+
+4.	To extract 2nd and 3rd character of a given file.
+	
+
